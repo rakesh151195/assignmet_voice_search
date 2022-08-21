@@ -181,15 +181,17 @@ class _MyHomePageState extends State<MyHomePage> {
                               const SizedBox(height: 10),
                               data.searchResponse?.definitions?[0].imageUrl !=
                                       null
-                                  ? Container(
-                                      child: Image.network(
-                                        data.searchResponse!.definitions![0]
-                                            .imageUrl!,
-                                        height: 150,
-                                        width: 150,
-                                      ),
+                                  ? Image.network(
+                                      data.searchResponse!.definitions![0]
+                                          .imageUrl!,
+                                      height: 150,
+                                      width: 150,
                                     )
-                                  : Container(),
+                                  : Image.asset(
+                                      "assets/images/image_not_found.png",
+                                      height: 150,
+                                      width: 150,
+                                    ),
                             ]
                           : [],
                     ),
